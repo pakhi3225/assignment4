@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-server-validation",
+  "version": "1.0.0",
+  "description": "Server-side validation application using NodeJS core modules (http, fs, events, streams, crypto)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

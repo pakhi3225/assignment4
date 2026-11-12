@@ -1,0 +1,89 @@
+:root {
+  --bg: #0f172a;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --ok: #15803d;
+  --bad: #b91c1c;
+  --border: #cbd5e1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+h1, h2 { margin: 0 0 6px; }
+.sub { margin: 0 0 18px; color: var(--muted); font-size: 0.9rem; }
+
+label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; }
+.row { display: flex; gap: 12px; }
+.row label { flex: 1; }
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 11px;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+}
+input:focus { outline: none; border-color: var(--primary); }
+
+.err { display: block; min-height: 1em; margin-top: 3px; color: var(--bad); font-size: 0.78rem; font-weight: 500; }
+
+button, .link {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+form button { width: 100%; }
+button:hover { background: var(--primary-dark); }
+.ghost { background: #e2e8f0; color: var(--text); font-size: 0.82rem; }
+.ghost:hover { background: #cbd5e1; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+.status { font-weight: 700; margin: 6px 0; }
+.status.ok { color: var(--ok); }
+.status.bad { color: var(--bad); }
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  max-height: 420px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

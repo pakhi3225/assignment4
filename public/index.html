@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server-Side Validation | NodeJS</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <h1>Registration Server</h1>
+        <p class="sub">
+          This form has <strong>no client-side checks</strong>. Every rule is
+          enforced by the NodeJS server, which answers with a status code.
+        </p>
+
+        <form id="regForm" novalidate>
+          <label>Full name
+            <input name="fullName" placeholder="Abhishek Patil" autocomplete="off" />
+            <span class="err" data-err="fullName"></span>
+          </label>
+          <label>PRN
+            <input name="prn" placeholder="202401040050" autocomplete="off" />
+            <span class="err" data-err="prn"></span>
+          </label>
+          <label>Email
+            <input name="email" placeholder="name@example.com" autocomplete="off" />
+            <span class="err" data-err="email"></span>
+          </label>
+          <div class="row">
+            <label>Phone
+              <input name="phone" placeholder="9876543210" autocomplete="off" />
+              <span class="err" data-err="phone"></span>
+            </label>
+            <label>Age
+              <input name="age" placeholder="21" autocomplete="off" />
+              <span class="err" data-err="age"></span>
+            </label>
+          </div>
+          <label>Password
+            <input name="password" type="password" placeholder="Min 8 chars, Aa1@" autocomplete="new-password" />
+            <span class="err" data-err="password"></span>
+          </label>
+
+          <button type="submit">Register (POST /api/register)</button>
+        </form>
+
+        <div class="tools">
+          <button type="button" class="ghost" id="fillValid">Fill valid sample</button>
+          <button type="button" class="ghost" id="fillInvalid">Fill invalid sample</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Server response</h2>
+        <p id="status" class="status">No request sent yet.</p>
+        <pre id="output">{ }</pre>
+
+        <div class="tools">
+          <button type="button" class="ghost" id="btnUsers">GET /api/users</button>
+          <button type="button" class="ghost" id="btnHealth">GET /api/health</button>
+          <button type="button" class="ghost" id="btnLogs">GET /api/logs</button>
+          <a class="ghost link" href="/api/users/export">Download export</a>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
